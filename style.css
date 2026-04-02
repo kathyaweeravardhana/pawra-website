@@ -1,0 +1,100 @@
+:root {
+  --primary: #E8641A;
+  --secondary: #1A6B6B;
+  --bg: #F5F0E8;
+  --white: #ffffff;
+  --dark: #222222;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+}
+
+.navbar,
+.footer,
+.delivery-bar {
+  background-color: var(--secondary);
+}
+
+.navbar a,
+.footer,
+.footer a {
+  color: var(--white) !important;
+}
+
+.page-banner {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-overlay {
+  background: rgba(26, 107, 107, 0.45);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title,
+.section-title,
+.brand-title {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.btn-brand {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+.btn-brand:hover {
+  background-color: #cf5715;
+  color: var(--white);
+}
+
+.product-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  background: var(--white);
+}
+
+.product-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.badge-sale {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.category-card {
+  background: var(--white);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--secondary);
+  margin: auto;
+}
+
+.footer {
+  padding: 35px 0;
+  margin-top: 50px;
+}
+
+.subheading {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
