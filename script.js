@@ -106,7 +106,47 @@ function removeItem(index) {
   renderCart();
 }
 
+function filterProducts(category, buttonElement = null) {
+  const items = document.querySelectorAll(".product-item");
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  items.forEach(item => {
+    if (category === "all" || item.dataset.category === category) {
+      item.classList.remove("hidden-product");
+    } else {
+      item.classList.add("hidden-product");
+    }
+  });
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  if (buttonElement) {
+    buttonElement.classList.add("active");
+  }
+}
+
+function applyCategoryFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (!category) return;
+
+  const buttonMap = {
+    all: 0,
+    dogs: 1,
+    cats: 2,
+    toys: 3,
+    grooming: 4
+  };
+
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  if (buttonMap[category] !== undefined && buttons[buttonMap[category]]) {
+    filterProducts(category, buttons[buttonMap[category]]);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   updateCartCount();
   renderCart();
+  applyCategoryFromURL();
 });
