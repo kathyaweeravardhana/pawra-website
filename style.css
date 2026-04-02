@@ -144,24 +144,6 @@ body {
   object-fit: cover;
 }
 
-.badge-sale {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: var(--primary);
-  color: var(--white);
-  font-size: 0.8rem;
-  padding: 7px 12px;
-  border-radius: 999px;
-  z-index: 2;
-}
-
-.old-price {
-  color: var(--muted);
-  text-decoration: line-through;
-  font-size: 0.95rem;
-}
-
 .price {
   color: var(--secondary);
   font-weight: 700;
