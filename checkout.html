@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAWRA | Checkout</title>
+  <title>PAWRA | Cart</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -13,13 +13,8 @@
 <body>
 <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/Logo.png" alt="PAWRA Logo" class="logo me-2">
-      <span>PAWRA</span>
-    </a>
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="PAWRA Logo" class="logo-only"></a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -28,7 +23,7 @@
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
       </ul>
     </div>
   </div>
@@ -36,14 +31,14 @@
 
 <section class="page-banner">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center banner-row g-4">
       <div class="col-lg-5 text-center">
-        <img src="images/contact-banner.jpg" alt="Checkout Banner" class="banner-img">
+        <img src="images/products-banner.png" alt="Cart Banner" class="banner-cutout">
       </div>
       <div class="col-lg-7">
-        <p class="subheading mb-2">Final step</p>
-        <h1 class="fw-bold mb-3">Checkout</h1>
-        <p>This is a demo checkout page for the website prototype.</p>
+        <p class="subheading mb-2">Your items</p>
+        <h1 class="fw-bold mb-3">Your Cart</h1>
+        <p>Review your selected products before checkout.</p>
       </div>
     </div>
   </div>
@@ -51,39 +46,15 @@
 
 <section class="py-5">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-7">
-        <div class="form-card">
-          <h3 class="section-title mb-4">Delivery Information</h3>
-          <form onsubmit="event.preventDefault(); alert('Order placed successfully! This is a dummy checkout.'); localStorage.removeItem('cart'); window.location.href='index.html';">
-            <div class="mb-3"><input type="text" class="form-control" placeholder="Full Name" required></div>
-            <div class="mb-3"><input type="text" class="form-control" placeholder="Phone" required></div>
-            <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Address" required></textarea></div>
-            <div class="mb-3"><input type="text" class="form-control" placeholder="City" required></div>
-            <div class="mb-3">
-              <select class="form-select">
-                <option>Cash on Delivery</option>
-                <option>Card Payment (Demo)</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-brand">Place Order</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="form-card">
-          <h3 class="section-title mb-4">Order Summary</h3>
-          <p>This is a static checkout flow for the assignment website.</p>
-          <a href="cart.html" class="text-link">Back to Cart</a>
-        </div>
-      </div>
+    <div id="cart-items"></div>
+    <div class="form-card mt-4">
+      <h4>Total: LKR <span id="cart-total">0.00</span></h4>
+      <a href="checkout.html" class="btn btn-brand mt-3">Proceed to Dummy Checkout</a>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container text-center"><p class="mb-0">© 2026 PAWRA. All rights reserved.</p></div>
-</footer>
+<footer class="footer"><div class="container text-center"><p class="mb-0">© 2026 PAWRA. All rights reserved.</p></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
